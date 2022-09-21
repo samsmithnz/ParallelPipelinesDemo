@@ -29,13 +29,13 @@ jobs:
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
     - name: Build database project
-      run: msbuild 'src/SamSmithNZ.Database/Database.sqlproj' /p:configuration='Release' /p:platform='Any CPU'         
+      run: msbuild 'src/Database/Database.sqlproj' /p:configuration='Release' /p:platform='Any CPU'         
     - name: check directory
       run: dir "${{ github.workspace }}\src\Database\bin\Output"         
     - name: 'Copy database files to artifacts folder'
       run: |
         mkdir "${{ github.workspace }}\Database" 
-        Copy-Item -Path "${{ github.workspace }}\src\Database\bin\Output\SamSmithNZ.Database.dacpac" -Destination "${{ github.workspace }}\Database"         
+        Copy-Item -Path "${{ github.workspace }}\src\Database\bin\Output\Database.dacpac" -Destination "${{ github.workspace }}\Database"         
     - name: check directory
       run: dir "${{ github.workspace }}/Database"
     - name: Publish database objects
