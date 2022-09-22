@@ -2,6 +2,6 @@
 A demo to show parallel workflow benefits
 
 ```mermaid
-  graph TD;
+  graph LR;
       Build-->Test-->Deploy;
 ```
