@@ -8,3 +8,8 @@ Simple workflow to build, test, then deploy our app. (total time: 1m 38s)
 ```
 
 Using parallel workflows
+```mermaid
+  graph LR;
+      build[Build 15s]-->deploy[Deploy 25s]
+      test[Test 30s]-->deploy[Deploy 25s];
+```
