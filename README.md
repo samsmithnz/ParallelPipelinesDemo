@@ -5,10 +5,10 @@ Simple workflow to build, test, then deploy our app. (total time: 1m 38s)
 ```mermaid
   graph TD;
       subgraph CI
-        buildweb[Build website 30s]-->buildwebservice[Build web service 30s]-->testWebsite[Test website 30s]-->testsWebservice[Test webservice 30s]-->CD;
+        buildweb[Build website 30s]-->buildwebservice[Build web service 30s]-->testWebsite[Test website 30s]-->testsWebservice[Test webservice 30s]-->CD2[CD];
       end
-      subgraph CD
-        deployWebsite[Deploy website 30s]-->deployWebService[Deploy web service 30s]-->smoke[Smoke test 30s]-->swap[Swap blue/green 30s];
+      subgraph ____CD
+        CD2[CD]-->deployWebsite[Deploy website 30s]-->deployWebService[Deploy web service 30s]-->smoke[Smoke test 30s]-->swap[Swap blue/green 30s];
       end
 ```
 
