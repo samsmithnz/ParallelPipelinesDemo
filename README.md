@@ -11,6 +11,6 @@ Using parallel workflows
 ```mermaid
   graph TD;
       buildweb[Build website 30s]-->testWebsite[Test website 30s]-->deployWebsite[Deploy website 30s]-->smoke[Smoke test 30s];
-      buildwebservice[Build web service 30s]-->testsWebservice[Test webservice 30s]-->deployWebService[Deploy web service 30s]-->smoke[Smoke test 30s];
+      buildwebservice[Build web service 30s]-->testsWebservice[Test web service 30s]-->deployWebService[Deploy web service 30s]-->smoke[Smoke test 30s];
       smoke[Smoke test 30s]-->swap[Swap blue/green 30s];
 ```
