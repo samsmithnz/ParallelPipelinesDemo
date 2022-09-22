@@ -16,5 +16,5 @@ Using parallel workflows
       test-->integrationTest[Integration Tests 30s]-->deploy;
       deploy-->deployWebService[Deploy web service 25s]-->smoke[Smoke test 30s];
       deploy-->deployWeb[Deploy website 25s]-->smoke[Smoke test 30s];
-      smoke[Smoke test 30s]-->swap[Swap blue green (10s)]
+      smoke[Smoke test 30s]-->swap[Swap blue/green 10s]
 ```
