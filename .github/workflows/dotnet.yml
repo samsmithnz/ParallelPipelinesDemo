@@ -15,10 +15,10 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
-    - name: Build web service
+    - name: Build and publish web service
       run: dotnet publish src/WebService/WebService.csproj --configuration Release --output ${{ github.workspace }}/webservice
-    - name: Build website
-      run: dotnet publish src/WebService/WebService.csproj --configuration Release --output ${{ github.workspace }}/website  
+    - name: Build and publish website
+      run: dotnet publish src/Website/Website.csproj --configuration Release --output ${{ github.workspace }}/website  
     - name: Upload web service build artifacts back to GitHub
       uses: actions/upload-artifact@v3
       with:
@@ -31,7 +31,7 @@ jobs:
         path: ${{ github.workspace }}/website
       
   buildDatabase:
-    runs-on: windows-latest
+    runs-on: windows-latest #requires windows due to .NET Framework dacpac dependency
     needs: [build]
     steps:
     - uses: actions/checkout@v3
