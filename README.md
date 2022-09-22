@@ -4,17 +4,16 @@ A demo to show parallel workflow benefits
 Simple workflow to build, test, then deploy our app. (total time: 1m 38s)
 ```mermaid
   graph TD;
-      buildWeb[Build web service 15s]-->buildWebService[Build website 15s]-->unitTest[Unit Tests 3s]-->integrationTest[Integration Tests 30s]-->deployWebService[Deploy web service 25s]-->deployWeb[Deploy website 25s]-->smoke[Smoke test 30s]-->swap[Swap blue/green 10s];
+      buildApp[Build App 30s]-->tests[Tests 30s]-->codeAnalysis[Code analysis 30s]-->securityAnalysis[Security analysis 30s]-->deployApp[Deploy app 30s]-->smoke[Smoke test 30s]-->swap[Swap blue/green 10s];
 ```
 
 Using parallel workflows
 ```mermaid
   graph TD;
-      build-->buildWeb[Build web service 15s]-->test
-      build-->buildWebService[Build website 15s]-->test;
-      test-->unitTest[Unit Tests 3s]-->deploy;
-      test-->integrationTest[Integration Tests 30s]-->deploy;
-      deploy-->deployWebService[Deploy web service 25s]-->smoke[Smoke test 30s];
-      deploy-->deployWeb[Deploy website 25s]-->smoke[Smoke test 30s];
+      build-->buildApp[Build App 30s]-->test
+      test-->tests[Tests 30s]-->deploy;
+      test-->codeAnalysis[Code analysis 30s]-->deploy;
+      test-->securityAnalysis[Security analysis 30s]-->deploy;
+      deploy-->deployApp[Deploy app 30s]-->smoke[Smoke test 30s];
       smoke[Smoke test 30s]-->swap[Swap blue/green 10s];
 ```
