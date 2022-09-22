@@ -10,8 +10,8 @@ Simple workflow to build, test, then deploy our app. (total time: 1m 38s)
 Using parallel workflows
 ```mermaid
   graph TD;
-      buildWeb[Build web service 15s]-->test
-      buildWebService[Build website 15s]-->test;
+      build-->buildWeb[Build web service 15s]-->test
+      build-->buildWebService[Build website 15s]-->test;
       test-->unitTest[Unit Tests 3s]-->deploy;
       test-->integrationTest[Integration Tests 30s]-->deploy;
       deploy-->deployWebService[Deploy web service 25s]-->smoke[Smoke test 30s];
