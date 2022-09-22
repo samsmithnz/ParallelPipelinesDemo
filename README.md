@@ -1,2 +1,2 @@
-# ParallelPipelinesDemo
-A demo to show parallel pipeline benefits
+# ParallelWorkflowsDemo
+A demo to show parallel workflow benefits
