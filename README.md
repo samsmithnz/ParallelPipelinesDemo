@@ -1,7 +1,7 @@
 # ParallelWorkflowsDemo
 A demo to show parallel workflow benefits
 
-Simple workflow to build, test, then deploy our app. (total time: 1m 38s)
+Simple workflow to build, test, then deploy our app. (total time: ~4m)
 ```mermaid
   graph TD;
       subgraph CI
