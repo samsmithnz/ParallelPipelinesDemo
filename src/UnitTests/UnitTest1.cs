@@ -6,6 +6,9 @@ namespace UnitTests
         [TestMethod]
         public void TestMethod1()
         {
+            //0.1s
+            System.Threading.Thread.Sleep(100);
+            Assert.IsTrue(true);
         }
     }
 }

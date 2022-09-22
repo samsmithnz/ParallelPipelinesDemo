@@ -6,6 +6,9 @@ namespace EndToEndTests
         [TestMethod]
         public void TestMethod1()
         {
+            //30s
+            System.Threading.Thread.Sleep(30000);
+            Assert.IsTrue(true);
         }
     }
 }
