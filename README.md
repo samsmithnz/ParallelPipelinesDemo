@@ -11,7 +11,7 @@ Simple workflow to build, test, then deploy our app. (total time: ~4m)
 Using parallel workflows
 ```mermaid
   graph TD;
-      ci((CI))-->buildweb[Build website 30s]-->testWebsite[Test website 30s]-->cd((CD))-->deployWebsite[Deploy website 30s]-->smoke[Smoke test 30s];
-      ci((CI))-->buildwebservice[Build web service 30s]-->testsWebservice[Test web service 30s]-->cd((CD))-->deployWebService[Deploy web service 30s]-->smoke[Smoke test 30s];
+      ci((CI))-->buildweb[Build website 30s]-->testWebsite[Test website 30s]-->cd((CD))-->deployIAC[Deploy infrastructure as code 30s]-->deployWebsite[Deploy website 30s]-->smoke[Smoke test 30s];
+      ci((CI))-->buildwebservice[Build web service 30s]-->testsWebservice[Test web service 30s]-->cd((CD))-->deployIAC[Deploy infrastructure as code 30s]-->deployWebService[Deploy web service 30s]-->smoke[Smoke test 30s];
       smoke[Smoke test 30s]-->swap[Swap blue/green 30s];
 ```
