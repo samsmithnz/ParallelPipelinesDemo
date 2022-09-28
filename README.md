@@ -15,7 +15,7 @@ Using parallel workflows
       ci((CI))-->buildPay[Build payment service 30s]-->testPay[Test payment service 30s]-->cd((CD));
       ci((CI))-->buildInv[Build inventory service 30s]-->testInv[Test inventory service 30s]-->cd((CD));
       cd((CD))-->deployWeb[Deploy store website 30s]-->smoke[Smoke test 30s];
-      cd((CD))-->deployPay[Deploy store website 30s]-->smoke[Smoke test 30s];
-      cd((CD))-->deployInv[Deploy store website 30s]-->smoke[Smoke test 30s];
+      cd((CD))-->deployPay[Deploy payment service 30s]-->smoke[Smoke test 30s];
+      cd((CD))-->deployInv[Deploy inventory service 30s]-->smoke[Smoke test 30s];
       smoke[Smoke test 30s]-->swap[Swap blue/green 30s];      
 ```
