@@ -1,0 +1,23 @@
+name: 'simple parallel workflow demo'
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build website
+      run: sleep 30
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test website
+      run: sleep 30 
+  publish:
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    steps:
+    - name: publish website
+      run: sleep 30     
