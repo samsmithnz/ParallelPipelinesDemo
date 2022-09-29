@@ -1,4 +1,4 @@
-name: 'serial workflow demo'
+name: 'simple serial workflow demo'
 
 on:
   push:
@@ -17,4 +17,3 @@ jobs:
     - name: publish website
       run: sleep 30   
   
-
