@@ -15,9 +15,9 @@ jobs:
     steps:
     - name: test website
       run: sleep 30 
-  publish:
+  deploy:
     runs-on: ubuntu-latest
     needs: [build, test]
     steps:
-    - name: publish website
+    - name: deploy website
       run: sleep 30     
