@@ -14,6 +14,6 @@ jobs:
       run: sleep 30
     - name: test website
       run: sleep 30 
-    - name: publish website
+    - name: deploy website
       run: sleep 30   
   
