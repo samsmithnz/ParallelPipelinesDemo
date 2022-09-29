@@ -4,14 +4,14 @@ A demo to show parallel workflow benefits
 Simple workflow to build/test (time - 1min 30s)
 ```mermaid
   graph LR;
-      buildAll[Build website 30s]-->testAll[Test website 30s]-->publishAll[Publish website 30s]
+      buildAll[Build website 30s]-->testAll[Test website 30s]-->deployAll[Deploy website 30s]
 ```
 
 Simple workflow to build test with parallal jobs (time - 1 min)
 ```mermaid
   graph LR;
-      buildAll[Build website 30s]-->publishAll[Publish website 30s];
-      testAll[Test website 30s]-->publishAll[Publish website 30s];
+      buildAll[Build website 30s]-->deployAll[Deploy website 30s];
+      testAll[Test website 30s]-->deployAll[Deploy website 30s];
 ```
 
 Simple workflow to build, test, then deploy our app. (total time: ~6mins)
