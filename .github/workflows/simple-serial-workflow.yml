@@ -1,0 +1,21 @@
+name: 'serial workflow demo'
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build website
+      run: sleep 30
+    - name: test website
+      run: sleep 30 
+    - name: publish website
+      run: sleep 30   
+  
+
