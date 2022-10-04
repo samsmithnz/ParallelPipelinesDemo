@@ -7,13 +7,21 @@ on:
     branches: [ "main" ]
 
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Build website
       run: sleep 30
+  test:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
     - name: test website
       run: sleep 30 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
     - name: deploy website
       run: sleep 30   
   
