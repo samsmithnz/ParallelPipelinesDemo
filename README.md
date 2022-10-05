@@ -14,14 +14,14 @@ Simple workflow to build test with parallal jobs (time - 1 min)
       testAll[Test website 30s]-->deployAll[Deploy website 30s];
 ```
 
-Simple workflow to build, test, then deploy our app. (total time: ~6mins)
+Complex workflow to build, test, then deploy our app. (total time: ~6 mins)
 ```mermaid
   graph LR;
       ci((CI))-->buildAll[Build store website, <br/>payment service, <br/>& inventory service <br/>1m 30s]-->testAll[Test store website, <br/>payment service, <br/>& inventory service <br/>1m 30s]-->cd((CD));
       cd((CD))-->deployAll[Deploy store website, <br/>payment service, <br/>& inventory service <br/>1m 30s]-->smoke[Smoke test 30s];
 ```
 
-Using a parallel workflow on the same dataset (~3mins)
+Complex workflow, using parallel jobs, on the same dataset (~3 mins)
 ```mermaid
   graph LR;
       ci((CI))-->buildWeb[Build store website 30s]-->testWeb[Test store website 30s]-->cd((CD));
