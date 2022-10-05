@@ -1,4 +1,4 @@
-name: 'serial workflow demo'
+name: 'complex serial workflow demo'
 
 on:
   push:
