@@ -4,7 +4,7 @@
       root((GitHub Runners))-->selfhosted([Self-hosted]);
       hosted([Hosted])-->hostedRunners[Hosted runners];
       hosted([Hosted])-->largerHostedRunners[Larger hosted runners];
-      selfhosted([Self-hosted])-->selfHostedRunnersVM[Individual virtual machine];
+      selfhosted([Self-hosted])-->selfHostedRunnersVM[Standalone virtual machine];
       selfhosted([Self-hosted])-->selfHostedRunnersARC[ARC/Action runners controller];
       selfhosted([Self-hosted])-->selfHostedRunnersEM[Elastic machines];
 ```
