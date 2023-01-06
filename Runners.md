@@ -1,4 +1,23 @@
+
 ```mermaid
+graph TD
+ linkStyle default interpolate basis
+ home((GitHub Actions))
+ home---firewall[<center>Customer firewall</center>]
+ home---hosted1
+ home---hosted2
+ subgraph Hosted-Runners
+ hosted1(<center>Hosted runners</center>)
+ hosted2(<center>Larger Hosted runners</center>)
+ end
+ subgraph "Customer Network________"
+ firewall---self3(<center>Standalone Virtual Machines</center>)
+ firewall---self1(<center>Action Runner Controller ARC</center>)
+ firewall---self2(<center>Elastic Machines</center>)
+ end
+ ```
+ 
+ ```mermaid
   graph LR;
       root((GitHub Runners))-->hosted([Hosted]);
       root((GitHub Runners))-->selfhosted([Self-hosted]);
