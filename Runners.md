@@ -27,3 +27,10 @@ graph TD
       selfhosted([Self-hosted])-->selfHostedRunnersARC[ARC/Action runners controller];
       selfhosted([Self-hosted])-->selfHostedRunnersEM[Elastic machines];
 ```
+
+ ```mermaid
+  graph TD;
+      foundation(Foundation)-->identity(Identity);
+      identity(Identity)-->remediation(Remediation);
+      identity(Identity)-->prevention(Prevention);
+```
